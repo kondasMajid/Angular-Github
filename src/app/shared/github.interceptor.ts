@@ -13,7 +13,6 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
         })
 
         console.log(newRequest)
-        // console.log(newRequest.body)
 
         return next.handle(newRequest).pipe(tap(succ => console.log('succes auth',succ),
         err => {
