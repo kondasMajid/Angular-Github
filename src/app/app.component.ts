@@ -9,9 +9,7 @@ import { ApiReqService } from './shared/api-req.service';
 export class AppComponent {
   title = 'gitHub-intercept';
 
-  constructor(private ApiService : ApiReqService){
-   
-  }
+  constructor(){  }
  
 
 }
