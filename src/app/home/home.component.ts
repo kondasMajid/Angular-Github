@@ -1,0 +1,32 @@
+import { Component, OnInit } from '@angular/core';
+import { ApiReqService } from '../shared/api-req.service';
+import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+  input: FormControl;
+  constructor(private apiService: ApiReqService) {
+    this.input = new FormControl();
+    console.log(this.getUser())
+    
+   }
+   user;
+  ngOnInit() {
+    
+  }
+  getUser(){
+      this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((keywords: string) => {
+          this.apiService.getUsers(keywords).subscribe(data=>{
+
+            this.user = this.apiService.username;
+            console.log(data) 
+          })
+        });
+  }
+} 
