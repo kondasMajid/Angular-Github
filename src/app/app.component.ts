@@ -10,10 +10,8 @@ export class AppComponent {
   title = 'gitHub-intercept';
 
   constructor(private ApiService : ApiReqService){
-    // console.log(this.getUser())
+   
   }
-  // getUser(){
-  //  return this.ApiService.getUsers();
-  // }
+ 
 
 }
