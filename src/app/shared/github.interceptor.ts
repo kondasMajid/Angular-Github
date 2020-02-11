@@ -3,7 +3,6 @@ import { User } from './user.model';
 
 
 import { tap } from 'rxjs/operators';
-// import 'rxjs/add/operator/do';
 
 export class GitHubHttpInterceptor implements HttpInterceptor{
 
