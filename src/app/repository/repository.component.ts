@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'repository',
@@ -7,17 +8,20 @@ import { ApiReqService } from '../shared/api-req.service';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  user: string;
-
-  constructor(private APiService: ApiReqService) { }
+  userz: string;
+  input: FormControl;
+  inz;
+  constructor(private APiService: ApiReqService) {
+    this.input = new FormControl();
+   }
 
   ngOnInit() {
-    this.getRepos()
+    // this.getRepos()
   }
 
-  getRepos(){
-      this.APiService.getRepos(this.user).subscribe((res) => console.log('repos', res))
-      this.user = this.APiService.username;
-  }
+  // getRepos(){
+  //     this.APiService.getRepos(this.inz).subscribe((res) => console.log('repos', res))
+  //     this.userz = this.APiService.username;
+  // }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -14,11 +14,14 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiReqService) {
     this.input = new FormControl();
     console.log(this.getUser())
+    console.log(this.getRepos())
     
    }
+   inputs;
+   inn;
    store : []
    Data: any;
-   user: string;
+   @Input() user: string;
   ngOnInit() {}
 
   getUser(){
@@ -38,4 +41,9 @@ export class HomeComponent implements OnInit {
           () => console.log('users loaded successfully'))
         });
   }
+  getRepos(){
+    this.apiService.getRepos().subscribe((res) => console.log('repos', res))
+    this.user = this.apiService.username;
+    // console.log(res)
+}
 } 

@@ -1,21 +1,4 @@
-<!-- <form class="form-signin" style="width: 400px; margin:auto; margin-top: 140px;">
 
-  <h3 class="h3 mb-3 font-weight-normal">Please enter github user name</h3>
-  <br>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <br>
-  <input type="email" id="inputEmail" class="form-control" placeholder="" required autofocus [formControl]="input"
-    name="user">
-  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="getUser()">search</button>
-</form> -->
-
-
-<!-- <div *ngIf="Data">
-  <p>show here</p>
-  <ul *ngFor="let data of Data">
-    <li>{{data?.login}}</li>
-  </ul>
-</div> -->
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <a class="navbar-brand" href="#">Angular Github </a>
@@ -38,7 +21,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username" aria-label="Search" required
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username"  aria-label="Search" required
         autofocus [formControl]="input" name="user">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
