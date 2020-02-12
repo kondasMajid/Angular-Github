@@ -14,7 +14,9 @@ Bootstrap
 
 ## Installing
 git clone  
-## npm install
+## 
+npm install
+## 
 ng server
 
 
