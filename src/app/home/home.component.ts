@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
             //   console.log('show', this.Data) 
             // }
             // this.store.push(this.Data)
-            console.log('show', this.Data.login)
+            console.log('show', this.Data)
           }, 
           err => console.log(err),
           () => console.log('users loaded successfully'))
