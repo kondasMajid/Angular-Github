@@ -10,22 +10,21 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiReqService {
-
-
   private ApiURL = environment.ApiUrl;
   userPath = 'users/'
+  repos = '/repos';
   username;
-  
+
   constructor(private http: HttpClient) { }
-
-
   getUsers(username: string) {
     let result = this.http.get<User>(this.ApiURL + this.userPath + username)
-
     return result;
-
   }
 
+  getRepos(username: string) {
+    let repos = this.http.get<User>(this.ApiURL+ this.userPath +username+'/repos')
+    return repos;
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

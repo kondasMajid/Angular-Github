@@ -7,11 +7,13 @@ import { ApiReqService } from './shared/api-req.service';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GitHubHttpInterceptor } from './shared/github.interceptor';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,

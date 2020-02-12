@@ -19,14 +19,15 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <a class="navbar-brand" href="#">Angular Github </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-   <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        
+
       </li>
       <li class="nav-item">
         <!-- <a class="nav-link" href="#">Link</a> -->
@@ -35,69 +36,76 @@
       </li>
       <li class="nav-item dropdown">
       </li>
-    </ul> 
+    </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" required autofocus [formControl]="input"
-      name="user">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username" aria-label="Search" required
+        autofocus [formControl]="input" name="user">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
 
 <main role="main" *ngIf="Data">
-  <div *ngFor="let data of Data"> 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container">
-      <div class="col-8">
-        <h1 class="display-3">Hello, {{data?.login}} !</h1>
-        <!-- <p>{{}}</p> -->
-      </div>
-      <div class="col-md-4">
+  <div *ngFor="let data of Data">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-8">
+          <h1 class="display-3">Hello, {{data?.login}} !</h1>
+          <!-- <p>{{}}</p> -->
+        </div>
+        <div class="col-md-4">
 
+        </div>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
-      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
     </div>
-  </div>
 
-  <div class="container-fluid">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">  
-        <img src={{data.avatar_url}} alt="Organization Avatar"  class="avatar"  style="width: 300px;"  />
-        <h2>{{data.name}}</h2>
-        <p>{{data.company}}</p>
-        <p>{{data.location}}</p>
-        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
-      </div>
-      
-      <div class="col-md-8">
-        <!-- <h2>Heading</h2> -->
-        <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Repo Details</a>
-          </li>
-          <!-- <li class="nav-item">
+    <div class="container-fluid">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <img src={{data.avatar_url}} alt="Organization Avatar" class="avatar" style="width: 300px;" />
+          <h2>{{data.name}}</h2>
+          <p>{{data.company}}</p>
+          <p>{{data.location}}</p>
+          <p><b>Email </b> {{data.email}}</p>
+          <p><b>Repositories </b>{{data.public_repos}}</p>
+          <p><b>Followers </b>{{data.followers}}</p>
+          <p><b>Following</b> {{data.following}}</p>
+          <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+
+        <div class="col-md-8">
+          <!-- <h2>Heading</h2> -->
+          <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Repo Details</a>
+            </li>
+            <!-- <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
           </li> -->
-          <!-- <li class="nav-item">
+            <!-- <li class="nav-item">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
           </li> -->
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">About </div>
-          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div> -->
-          <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div> -->
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <repository></repository>  
+            </div>
+            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div> -->
+            <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div> -->
+          </div>
+          <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
-        <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
       </div>
-    </div>
 
-    <hr>
+      <hr>
 
-  </div> <!-- /container -->
+    </div> <!-- /container -->
 
   </div>
-  
+
 </main>
