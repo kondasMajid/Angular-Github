@@ -16,9 +16,7 @@ export class ApiReqService {
   userPath = 'users/'
   username;
   
-  constructor(private http: HttpClient) {
-    // console.log('llok' ,this.getUsers())    
-  }
+  constructor(private http: HttpClient) { }
 
 
   getUsers(username: string) {
