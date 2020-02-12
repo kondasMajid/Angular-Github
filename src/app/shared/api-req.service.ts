@@ -26,16 +26,6 @@ export class ApiReqService {
   }
 
 
-  // headerSet = {
-  //   'Content-Type': 'application/json',
-  //   'Authorization': this.token,
-  //   'token' : 'b79c18eec0f02499c95b8bf17ab25b85a2196ca3'
-  // }
-
-  // httpOptions = {
-  //   httpHeader: new HttpHeaders(this.headerSet)
-  // }
-
   getUsers(username: string) {
     let result = this.http.get<User>(this.ApiURL + this.userPath + username)
 
