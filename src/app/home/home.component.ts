@@ -17,9 +17,8 @@ export class HomeComponent implements OnInit {
     
    }
    user;
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
+
   getUser(){
       this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((keywords: string) => {
           this.apiService.getUsers(keywords).subscribe(data=>{
