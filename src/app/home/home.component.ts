@@ -16,15 +16,22 @@ export class HomeComponent implements OnInit {
     console.log(this.getUser())
     
    }
-   user;
+   store : []
+   Data: any;
+   user: string;
   ngOnInit() {}
 
   getUser(){
       this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((keywords: string) => {
           this.apiService.getUsers(keywords).subscribe(data=>{
-
             this.user = this.apiService.username;
-            console.log(data) 
+            // this.Data = data;
+            if(Array.isArray(data)){
+              this.Data = data;
+              console.log('show', this.Data) 
+            }
+            // this.store.push(this.Data)
+            // console.log('show', this.Data.login)
           })
         });
   }

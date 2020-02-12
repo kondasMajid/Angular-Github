@@ -11,3 +11,9 @@
   </form>   
 
  
+<div *ngIf="Data">
+  <p>show here</p>
+  <ul *ngFor="let data of Data"> 
+    <li>{{data?.login}}</li>
+  </ul>
+</div>
