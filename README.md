@@ -4,14 +4,17 @@
 
 
 ## Development 
-Angular version 8.3.22
+Angular version 8.3.22 
+## 
 Github API
+## 
 Angular Interceptors
+## 
 Bootstrap
 
 ## Installing
-git clone
-npm install
+git clone  
+## npm install
 ng server
 
 
