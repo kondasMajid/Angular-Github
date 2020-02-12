@@ -8,14 +8,10 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
 
     intercept(req: HttpRequest<User>, next: HttpHandler ){
 
-
-        
-        const newRequest = req.clone({
+       const newRequest = req.clone({
             params: new HttpParams().append('name', 'kondas').append('age', '22'),
             headers: req.headers.set(
                   'Authorization', environment.token ,
-                  
-                 
                 )
         })
 
@@ -27,7 +23,5 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
                 console.log('You are authenticated')
             }
         }));
-
     }
-
 }
