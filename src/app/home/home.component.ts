@@ -26,16 +26,12 @@ export class HomeComponent implements OnInit {
 
     // making http request to get the data through the api.
     getUser(){
-        this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((keywords: string) => {
+        this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
+        .subscribe((keywords: string) => {
             this.apiService.getUsers(keywords).subscribe(data=>{
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)
-              // if(Array.isArray(data)){
-              //   this.Data = data;
-              //   console.log('show', this.Data) 
-              // }
-              // this.store.push(this.Data)
               console.log('show', this.Data)
             }, 
             err => console.log(err),
