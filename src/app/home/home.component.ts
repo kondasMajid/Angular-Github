@@ -57,9 +57,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // }
    
   @ViewChild(RepositoryComponent, {static : false})
-  sample: QueryList<RepositoryComponent>;
+  sample!: RepositoryComponent;
 
-  ngAfterViewInit() {;
+  ngAfterViewInit() : void {
     console.log("sample:", this.sample);
   }
-} 
+}   
