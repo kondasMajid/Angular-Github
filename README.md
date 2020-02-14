@@ -2,7 +2,6 @@
 
 
 
-
 ## Development 
 Angular version 8.3.22 
 ## 
@@ -18,9 +17,6 @@ git clone
 npm install
 ## 
 ng server
-
-
-
 
 ## Running port
 
