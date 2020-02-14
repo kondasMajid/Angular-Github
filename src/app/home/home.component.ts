@@ -10,7 +10,6 @@ import { RepositoryComponent } from '../repository/repository.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  // nativeElement: any;
 
 // @ViewChild( 'primaryColorSample', {static: false}) dateViewRef: RepositoryComponent; 
 
