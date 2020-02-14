@@ -10,11 +10,11 @@ import { FormControl } from '@angular/forms';
 export class RepositoryComponent implements OnInit {
   [x: string]: any;
   userz: string;
-  input: FormControl;
+  input: "hello world";
   inz;
   normal = 'text view child'
   constructor(private APiService: ApiReqService) {
-    this.input = new FormControl();
+    // this.input = new FormControl();
 
     //loging view child
     // console.log('target', this.target)

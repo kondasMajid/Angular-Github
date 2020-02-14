@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 // @ViewChild( 'primaryColorSample', {static: false}) dateViewRef: RepositoryComponent; 
 
-    input: FormControl;
+    // input: FormControl;
+    @Input() input: FormControl;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
       console.log(this.getUser())
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   console.log("viewchild ",this.dateViewRef); 
   // }
    
-  @ViewChild(RepositoryComponent, {static:false})   sample: ElementRef;
+  @ViewChild(RepositoryComponent, {static:false})   sample: RepositoryComponent;
 
   ngAfterViewInit()  {
     console.log("sample:", this.sample);
