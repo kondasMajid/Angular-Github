@@ -24,10 +24,10 @@ export class RepositoryComponent implements OnInit {
     // this.getRepos()
   }
 
-  // getRepos(){
-  //     this.APiService.getRepos(this.inz).subscribe((res) => console.log('repos', res))
-  //     this.userz = this.APiService.username;
-  // }
+  getRepos(){
+      this.APiService.getRepos().subscribe((res) => console.log('repos', res))
+      this.userz = this.APiService.username;
+  }
 
   //========== View child for same component===>
   //Adding view child
