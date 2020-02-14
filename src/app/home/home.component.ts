@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
    @Input() user: string;
   ngOnInit() {}
 
+  // making http request to get the data through the api.
   getUser(){
       this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((keywords: string) => {
           this.apiService.getUsers(keywords).subscribe(data=>{
@@ -41,6 +42,8 @@ export class HomeComponent implements OnInit {
           () => console.log('users loaded successfully'))
         });
   }
+
+  //get repos
   getRepos(){
     this.apiService.getRepos().subscribe((res) => console.log('repos', res))
     this.user = this.apiService.username;
