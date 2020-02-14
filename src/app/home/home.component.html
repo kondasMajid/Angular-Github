@@ -25,7 +25,7 @@
   </div>
 </nav>
 
-<main role="main" *ngIf="Data" >
+<main role="main" *ngIf="Data">
   <div *ngFor="let data of Data">
     <div class="jumbotron">
       <div class="container">
@@ -49,6 +49,7 @@
           <p><b>Followers </b>{{data.followers}}</p>
           <p><b>Following</b> {{data.following}}</p>
         </div>
+
         <div class="col-md-8">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -64,6 +65,7 @@
         </div>
       </div>
       <hr>
+
     </div>
   </div>
 </main>

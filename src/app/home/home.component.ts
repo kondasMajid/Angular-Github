@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit, ElementRef, QueryList } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     input: FormControl;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
-      // console.log(this.getUser())
-      // console.log(this.getRepos())
+      console.log(this.getUser())
+      console.log(this.getRepos())
     }
 
     inputs; // user input vaariable
@@ -56,10 +56,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   console.log("viewchild ",this.dateViewRef); 
   // }
    
-  @ViewChild(RepositoryComponent, {static : false})
-  sample!: RepositoryComponent;
+  @ViewChildren(RepositoryComponent)  sample: RepositoryComponent;
 
-  ngAfterViewInit() : void {
+  ngAfterViewInit()  {
     console.log("sample:", this.sample);
   }
 }   
