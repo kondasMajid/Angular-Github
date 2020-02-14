@@ -14,18 +14,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
 // @ViewChild( 'primaryColorSample', {static: false}) dateViewRef: RepositoryComponent; 
 
     // input: FormControl;
-    @Input() input: FormControl;
+     input: FormControl;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
       console.log(this.getUser())
       console.log(this.getRepos())
     }
-
+    @Input() user;
     inputs; // user input vaariable
     inn;
     store : []
     Data: any;
-    @Input() user: string;
+    // @Input('') user: string;
     ngOnInit() {}
 
     
