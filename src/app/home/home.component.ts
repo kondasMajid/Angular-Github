@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   console.log("viewchild ",this.dateViewRef); 
   // }
    
-  @ViewChildren(RepositoryComponent)  sample: RepositoryComponent;
+  @ViewChild(RepositoryComponent, {static:false})   sample: ElementRef;
 
   ngAfterViewInit()  {
     console.log("sample:", this.sample);
