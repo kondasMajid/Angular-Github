@@ -12,8 +12,11 @@ export class RepositoryComponent implements OnInit {
   userz: string;
   input: "hello world";
   inz;
+  
   normal = 'text view child'
   constructor(private APiService: ApiReqService) {
+
+
     // this.input = new FormControl();
 
     //loging view child
