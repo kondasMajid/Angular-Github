@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 
@@ -31,13 +31,13 @@ export class RepositoryComponent implements OnInit {
 
   //========== View child for same component===>
   //Adding view child
-    // @ViewChild('target', {static: false}) target ;
+    @ViewChild('target', {static: false}) target:ElementRef ;
 
 
-    //log @viewchild
-    // ngAfterViewInit(){
-    //   console.log(this.target.nativeElement.innerText)
-    // }
+    // log @viewchild
+    ngAfterViewInit(){
+      console.log(this.target.nativeElement.innerText)
+    }
 
 
 

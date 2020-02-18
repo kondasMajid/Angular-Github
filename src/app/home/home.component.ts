@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(this.getRepos())
     }
     @Input() user;
-    inputs; // user input vaariable
+    inputs; // user input va  ariable
     inn;
     store : []
     Data: any;
