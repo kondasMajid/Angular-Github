@@ -18,11 +18,11 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
         return next.handle(newRequest).pipe(tap(succ => console.log(succ),
         err =>  {
             if(err.status ===401){
-                alert('you not authenticated')
+                // alert('you not authenticated')
                 // console.error('you not authenticated')
             }else{
                 // console.log('You are authenticated')
-                alert()
+                // alert()
             }
         }));
     }
