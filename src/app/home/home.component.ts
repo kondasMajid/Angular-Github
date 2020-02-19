@@ -20,12 +20,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(this.getUser())
       console.log(this.getRepos())
     }
-    @Input() user;
+    @Input() user: string;
     inputs; // user input va  ariable
     inn;
     store : []
     Data: any;
-    // @Input('') user: string;
     ngOnInit() {}
 
     
@@ -55,6 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   // ngAfterViewInit(){
   //   console.log("viewchild ",this.dateViewRef); 
+  
   // }
    
   @ViewChild(RepositoryComponent, {static:false})   sample: RepositoryComponent;
