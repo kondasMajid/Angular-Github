@@ -15,15 +15,10 @@ export class RepositoryComponent implements OnInit, OnChanges {
   repos ;
   stack;
   @Input() keywords: string;
-  normal = 'text view child'
-  constructor(private APiService: ApiReqService) {
 
-    
-    // this.input = new FormControl();
 
-    //loging view child
-    // 
-   }
+  constructor(private APiService: ApiReqService) {}
+
  
   ngOnInit() {
     // this.getRepos()
@@ -37,16 +32,6 @@ export class RepositoryComponent implements OnInit, OnChanges {
   
   }
 
-
-
-
-  // getRepos(){
-  //     this.APiService.getRepos().subscribe((res) => console.log('repos', res))
-  //     this.userz = this.APiService.username;
-  // }
-
-  //========== View child for same component===>
-  //Adding view child
     @ViewChild('target', {static: false}) target:ElementRef ;
 
 
@@ -54,7 +39,4 @@ export class RepositoryComponent implements OnInit, OnChanges {
     ngAfterViewInit(){
       console.log(this.target.nativeElement.innerText)
     }
-
-
-
 }

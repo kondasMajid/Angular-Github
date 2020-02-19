@@ -9,7 +9,7 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
     intercept(req: HttpRequest<User>, next: HttpHandler ){
 
        const newRequest = req.clone({
-            params: new HttpParams().append('name', 'kondas').append('age', '22'),
+            params: new HttpParams().append('made', 'for fun').append('author', '@codejack :)'),
             headers: req.headers.set(
                   'Authorization', environment.token ,
                 )
@@ -18,9 +18,11 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
         return next.handle(newRequest).pipe(tap(succ => console.log(succ),
         err =>  {
             if(err.status ===401){
-                console.error('you not authenticated')
+                alert('you not authenticated')
+                // console.error('you not authenticated')
             }else{
-                console.log('You are authenticated')
+                // console.log('You are authenticated')
+                alert()
             }
         }));
     }

@@ -9,22 +9,20 @@ import { RepositoryComponent } from '../repository/repository.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
-// @ViewChild( 'primaryColorSample', {static: false}) dateViewRef: RepositoryComponent; 
 
-    // input: FormControl;
      input: FormControl;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
       console.log(this.getUser())
-      // console.log(this.getRepos())
+      
     }
     @Input() user: string;
-    inputs; // user input va  ariable
-    inn;
-    store : []
+    inputs; 
     Data: any;
+
+
     ngOnInit() {}
 
     
@@ -36,30 +34,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)
-              console.log('show', this.Data)
+              // console.log('show', this.Data)
             }, 
             err => console.log(err),
             () => console.log('users loaded successfully'))
           });
     }
-
-    //get repos
-  //   getRepos(){
-  //     this.apiService.getRepos().subscribe((res) => console.log('repos', res))
-  //     this.user = this.apiService.username;
-    
-  // }
-
-  //==========impleting viewChild to access other component =======>
-  
-  // ngAfterViewInit(){
-  //   console.log("viewchild ",this.dateViewRef); 
-
-  // }
-   
-  @ViewChild(RepositoryComponent, {static:false})   sample: RepositoryComponent;
-
-  ngAfterViewInit()  {
-    console.log("sample:", this.sample);
-  }
 }   
