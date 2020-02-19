@@ -1,2 +1,8 @@
 <p #target>HELLO WORLD</p>
-<p>{{input}}</p>
+<!-- <p>{{input}}</p> -->
+
+<div>
+    <ul *ngFor="let repo of repos ">
+        <li>{{repo.name}}</li>
+    </ul>
+</div>

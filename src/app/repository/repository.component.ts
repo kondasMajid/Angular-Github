@@ -11,28 +11,34 @@ export class RepositoryComponent implements OnInit, OnChanges {
   
   [x: string]: any;
   userz: string;
-  input: "hello world";
-  inz;
-
+  
+  repos ;
+  stack;
   @Input() keywords: string;
   normal = 'text view child'
   constructor(private APiService: ApiReqService) {
 
-
+    
     // this.input = new FormControl();
 
     //loging view child
-    // console.log('target', this.target)
+    // 
    }
  
   ngOnInit() {
     // this.getRepos()
+    // console.log(this.stack)
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     console.log(changes.keywords.currentValue);
-    this.APiService.getRepos(changes.keywords.currentValue).subscribe((res) => console.log('repos', res))
+   this.repos = this.APiService.getRepos(changes.keywords.currentValue).subscribe(res =>  this.repos = res)
+  console.log('target', this.repos  )
+  
   }
+
+
+
 
   // getRepos(){
   //     this.APiService.getRepos().subscribe((res) => console.log('repos', res))
