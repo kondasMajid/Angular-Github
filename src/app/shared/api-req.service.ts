@@ -21,9 +21,9 @@ export class ApiReqService {
     return result;
   }
 
-  getRepos() {
-    let repos = this.http.get<User>(this.ApiURL+ this.userPath +this.username+'/repos')
-    return repos;
+  getRepos(data : string) {
+    return this.http.get<User>(this.ApiURL+ this.userPath+data +'/repos')
+    // return repos;
   }
 
   private handleError(error: HttpErrorResponse) {

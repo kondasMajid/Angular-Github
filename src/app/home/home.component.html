@@ -59,7 +59,7 @@
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <repository pass=""> </repository>
+              <repository pass="" [keywords]="input.value" *ngIf="input.value"> </repository>
             </div>
           </div>
         </div>

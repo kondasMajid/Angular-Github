@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
       console.log(this.getUser())
-      console.log(this.getRepos())
+      // console.log(this.getRepos())
     }
     @Input() user: string;
     inputs; // user input va  ariable
@@ -44,17 +44,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     //get repos
-    getRepos(){
-      this.apiService.getRepos().subscribe((res) => console.log('repos', res))
-      this.user = this.apiService.username;
-      // console.log(res) 
-  }
+  //   getRepos(){
+  //     this.apiService.getRepos().subscribe((res) => console.log('repos', res))
+  //     this.user = this.apiService.username;
+    
+  // }
 
   //==========impleting viewChild to access other component =======>
   
   // ngAfterViewInit(){
   //   console.log("viewchild ",this.dateViewRef); 
-  
+
   // }
    
   @ViewChild(RepositoryComponent, {static:false})   sample: RepositoryComponent;
