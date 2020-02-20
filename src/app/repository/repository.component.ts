@@ -12,7 +12,7 @@ export class RepositoryComponent implements OnInit, OnChanges {
   [x: string]: any;
   userz: string;
   
-  repos ;
+  repos : any;
   stack;
   @Input() keywords: string;
 
@@ -28,15 +28,8 @@ export class RepositoryComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.keywords.currentValue);
    this.repos = this.APiService.getRepos(changes.keywords.currentValue).subscribe(res =>  this.repos = res)
-  console.log('target', this.repos  )
+  // console.log('target', this.repos  )
   
   }
 
-    @ViewChild('target', {static: false}) target:ElementRef ;
-
-
-    // log @viewchild
-    ngAfterViewInit(){
-      console.log(this.target.nativeElement.innerText)
-    }
 }
