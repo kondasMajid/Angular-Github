@@ -25,7 +25,7 @@ export class RepositoryComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.keywords.currentValue);
    this.APiService.getRepos(changes.keywords.currentValue).subscribe(res => {
-    //  console.log(res)
+     console.log(res)
     this.repos = res;
    })
   
