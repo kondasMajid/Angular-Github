@@ -22,7 +22,7 @@ export class ApiReqService {
   }
 
   getRepos(data : string) {
-    return this.http.get<User>(this.ApiURL+ this.userPath+data +'/repos')
+    return this.http.get<any[]>(this.ApiURL+ this.userPath+data +'/repos')
     // return repos;
   }
 

@@ -10,9 +10,9 @@ import { FormControl } from '@angular/forms';
 export class RepositoryComponent implements OnInit, OnChanges {
   
   [x: string]: any;
-  userz: string;
+ 
   
-  repos : any;
+  repos : any[];
   stack;
   @Input() keywords: string;
 
@@ -20,15 +20,14 @@ export class RepositoryComponent implements OnInit, OnChanges {
   constructor(private APiService: ApiReqService) {}
 
  
-  ngOnInit() {
-    // this.getRepos()
-    // console.log(this.stack)
-  }
+  ngOnInit() {  }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.keywords.currentValue);
-   this.repos = this.APiService.getRepos(changes.keywords.currentValue).subscribe(res =>  this.repos = res)
-  // console.log('target', this.repos  )
+   this.APiService.getRepos(changes.keywords.currentValue).subscribe(res => {
+    //  console.log(res)
+    this.repos = res;
+   })
   
   }
 
