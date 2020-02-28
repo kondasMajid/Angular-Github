@@ -21,7 +21,7 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
                 // alert('you not authenticated')
                 // console.error('you not authenticated')
             }else{
-                // console.log('You are authenticated')
+                // console.log('You are auth    enticated')
                 // alert()
             }
         }));
