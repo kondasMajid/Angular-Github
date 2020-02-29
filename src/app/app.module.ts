@@ -20,7 +20,7 @@ import { RepositoryComponent } from './repository/repository.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-
+    
   ],
   providers: [ApiReqService,
      {provide: HTTP_INTERCEPTORS,

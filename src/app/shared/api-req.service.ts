@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { User } from './user.model';
 import { catchError } from 'rxjs/operators';
 
-
+    
 @Injectable({
   providedIn: 'root'
 })
@@ -21,10 +21,10 @@ export class ApiReqService {
     return result;
   }
 
-  getRepos(data : string) {
+  getRepos(data : string): Observable<any> {
     return this.http.get<any[]>(this.ApiURL+ this.userPath+data +'/repos')
     // return repos;
-  }
+  }  
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
