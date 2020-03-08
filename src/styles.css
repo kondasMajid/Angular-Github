@@ -1,2 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.display-3 {
+    font-size: 4.0rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+
+@media (min-width: 992px) {
+    .input{
+        margin-left: 50px;
+    }
+ }
+
+@media (min-width: 576px) { 
+.input{
+    /* margin-left: ; */
+}
+
+}

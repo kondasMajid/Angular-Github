@@ -1,102 +1,94 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-  <a class="navbar-brand" href="#">Angular Github </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarsExampleDefault"
-    aria-controls="navbarsExampleDefault"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 90px;">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"></li>
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
-      <li class="nav-item dropdown"></li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="text"
-        placeholder="Enter github username"
-        aria-label="Search"
-        required
-        autofocus
-        [formControl]="input"
-        name="user"
-        style="width: 800px; height: 70px;"
-      />
-    
-    </form>
-  </div>
-</nav>
-
-<main role="main" *ngIf="Data">
-  <div *ngFor="let data of Data">
-    <div class="jumbotron">
-      <div class="container">
-        <div class="col-8">
-          <h1 class="display-3">Hello, {{ data?.login }}</h1>
-        </div>
-        <div class="col-md-4"></div>
+<div class="container text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column fixed-top">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Running  on local host</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+               placeholder="search  username"
+              aria-label="Search"
+              required
+              autofocus
+              [formControl]="input"
+              name="user"
+              style="width: 800px; height: 79px; "/>
+          </form>
+        </nav>
       </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4">
-          <img
-            src="{{ data.avatar_url }}"
-            alt="Organization Avatar"
-            class="avatar"
-            style="width: 220px; border-radius: 50%;"
-          />
-          <div>
-            <h2>{{ data.name }}</h2>
-            <p>{{ data.company }}</p>
-            <p>{{ data.location }}</p>
-            <!-- <p><b> </b> {{data.email ? data.email : 'lol'}}</p> -->
-            <p><b>Repositories </b>{{ data.public_repos }}</p>
-            <p><b>Followers </b>{{ data.followers }}</p>
-            <p><b>Following</b> {{ data.following }}</p>
+    </header>
+  
+  <main role="main "  *ngIf="Data" style="width: 100%;">
+    <div *ngFor="let data of Data">
+      <div class="">
+        <div class="container">
+          <div class="col-8">
+            <h3 class="display-3">Hello, {{ data?.login }}</h3>
           </div>
+          <div class="col-md-4"></div>
         </div>
+      </div>
 
-        <div class="col-md-8">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="home-tab"
-                data-toggle="tab"
-                role="tab"
-                aria-controls="home"
-                aria-selected="true"
-                >Repositories</a
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              src="{{ data.avatar_url }}"
+              alt="Organization Avatar"
+              class="avatar"
+              style="width: 220px; border-radius: 50%;"
+            />
+            <div>
+              <h2>{{ data.name }}</h2>
+              <p>{{ data.company }}</p>
+              <p>{{ data.location }}</p>
+              <!-- <p><b> </b> {{data.email ? data.email : 'lol'}}</p> -->
+              <p><b>Repositories </b>{{ data.public_repos }}</p>
+              <p><b>Followers </b>{{ data.followers }}</p>
+              <p><b>Following</b> {{ data.following }}</p>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="home-tab"
+                  data-toggle="tab"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Repositories</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
               >
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div
-              class="tab-pane fade show active"
-              id="home"
-              role="tabpanel"
-              aria-labelledby="home-tab"
-            >
-              <repository pass="" [keywords]="input.value" *ngIf="input.value">
-              </repository>
+                <repository
+                  pass=""
+                  [keywords]="input.value"
+                  *ngIf="input.value; else elseBlock"
+                >
+                </repository>
+                <ng-template #elseBlock>
+                  content not ready
+                </ng-template>
+              </div>
             </div>
           </div>
         </div>
+        <hr />
       </div>
-      <hr />
     </div>
+  </main>
   </div>
-</main>
-
+</div>
 <!-- <ng-template #elseBlock>Welcome please enter your gGithub username.</ng-template> -->
