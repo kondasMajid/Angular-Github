@@ -1,31 +1,31 @@
 <div class="container text-center">
-  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column fixed-top">
-    <header class="masthead mb-auto">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column ">
+    <header class="masthead mb-auto fixed-top">
       <div class="inner">
-        <h3 class="masthead-brand">Running  on local host</h3>
+        <h3 class="masthead-brand">Angular github</h3>
         <nav class="nav nav-masthead justify-content-center">
           <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
               type="text"
-               placeholder="search  username"
+               placeholder="Search  Github  username"
               aria-label="Search"
               required
               autofocus
               [formControl]="input"
               name="user"
-              style="width: 800px; height: 79px; "/>
+              style="width: 800px; height: 55px; "/>
           </form>
         </nav>
       </div>
     </header>
   
-  <main role="main "  *ngIf="Data" style="width: 100%;">
+  <main role="main "  *ngIf="Data" style="">
     <div *ngFor="let data of Data">
       <div class="">
         <div class="container">
           <div class="col-8">
-            <h3 class="display-3">Hello, {{ data?.login }}</h3>
+            <h3 class="display-3" style="margin-top: 90px;">Hello, {{ data?.login }}</h3>
           </div>
           <div class="col-md-4"></div>
         </div>
@@ -87,6 +87,14 @@
         <hr />
       </div>
     </div>
+      <span class="text-muted">Made with love 💖  <a href="https://github.com/kondasMajid/" target="_blank">@codejack</a> </span>
+
   </main>
   </div>
+
+
+
+  <!-- <span class="text-muted">Made with love 💖  <a href="https://github.com/kondasMajid/" target="_blank">@codejack</a> </span> -->
 </div>
+
+  
