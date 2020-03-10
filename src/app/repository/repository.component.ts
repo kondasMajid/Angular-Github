@@ -10,13 +10,9 @@ import { FormControl } from '@angular/forms';
 export class RepositoryComponent implements OnInit, OnChanges {
   
   [x: string]: any;
- 
-  
-  repos : any[];
+   repos : any[];
   stack;
   @Input() keywords: string;
-
-
   constructor(private APiService: ApiReqService) {}
 
  
