@@ -15,20 +15,20 @@ Angular Interceptors configured for the headers
 Bootstrap
 
 ## Installing
-git clone  
+git clone  https://github.com/kondasMajid/Angular-Github.git
 ## 
 npm install
 ## 
-ng server
+ng serve      
 
 ## Running port
 
-hosthost:4200
+http://localhost:4200/
 
 
 ## Further details
 
-Development on going......
+Development.... 
 
 
 @codejack

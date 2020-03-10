@@ -14,13 +14,22 @@
               autofocus
               [formControl]="input"
               name="user"
-              style="width: 800px; height: 55px; "/>
+              style="width: 800px; height: 55px; " />
           </form>
         </nav>
       </div>
     </header>
-  
-  <main role="main "  *ngIf="Data" style="">
+  <!-- <div *ngIf="!Data" >
+    <h3> No repository recently</h3>
+  </div> -->
+  <div style="margin-top: 240px;">
+    <ng-template #noData class="ng-template" >
+      <h3> no repository yet !</h3>
+    </ng-template>
+  </div>
+
+  <!-- </ng-template></ng-template> -->
+  <main role="main "  *ngIf="Data ; else noData" style="">
     <div *ngFor="let data of Data">
       <div class="">
         <div class="container">
@@ -88,7 +97,6 @@
       </div>
     </div>
       <span class="text-muted">Made with love 💖  <a href="https://github.com/kondasMajid/" target="_blank">@codejack</a> </span>
-
   </main>
   </div>
 
