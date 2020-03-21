@@ -16,13 +16,17 @@ export class ApiReqService {
   username; //passing to the user input in the home component
 
   constructor(private http: HttpClient) { }
+
+  //return users
   getUsers(username: string) {
-    let result = this.http.get<User>(this.ApiURL + this.userPath + username)
+    let result = this.http.get<User>
+    (this.ApiURL + this.userPath + username)
     return result;
   }
 
   getRepos(data : string): Observable<any> {
-    return this.http.get<any[]>(this.ApiURL+ this.userPath+data +'/repos')
+    return this.http.get<any[]>(this.ApiURL+
+       this.userPath+data +'/repos')
     // return repos;
   }  
 
@@ -39,5 +43,3 @@ export class ApiReqService {
   };
 
 }
-
-// b79c18eec0f02499c95b8bf17ab25b85a2196ca3
