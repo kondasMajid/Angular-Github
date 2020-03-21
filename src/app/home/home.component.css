@@ -11,3 +11,8 @@
   .ng-template{
     margin-top: 240px
   }
+
+  .scroll{
+    height:600px;
+    overflow-y: scroll;
+  }
