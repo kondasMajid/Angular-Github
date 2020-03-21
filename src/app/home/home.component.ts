@@ -26,11 +26,13 @@ export class HomeComponent implements OnInit {
     ngOnInit() {}
 
     
-    // making http request to get the data through the api.
+    // making http request for the  data 
     getUser(){
-        this.input.valueChanges.pipe(debounceTime(500), distinctUntilChanged())
-        .subscribe((keywords: string) => {
-            this.apiService.getUsers(keywords).subscribe(data=>{
+        this.input.valueChanges.pipe(debounceTime(500),
+         distinctUntilChanged())
+         .subscribe((keywords: string) => {
+            this.apiService.getUsers(keywords)
+            .subscribe(data=>{
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)

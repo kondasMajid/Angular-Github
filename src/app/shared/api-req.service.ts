@@ -13,7 +13,7 @@ export class ApiReqService {
   private ApiURL = environment.ApiUrl;
   userPath = 'users/'
   repos = '/repos';
-  username;
+  username; //passing to the user input in the home component
 
   constructor(private http: HttpClient) { }
   getUsers(username: string) {
