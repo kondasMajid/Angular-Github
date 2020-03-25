@@ -19,11 +19,11 @@ git clone  https://github.com/kondasMajid/Angular-Github.git
 ## 
 npm install
 ## 
-<<<<<<< HEAD
+
 ng serve      
 =======
 ng serve
->>>>>>> 2943747534977bdf63474c7420e9e98a0e42046c
+
 
 ## Running port
 
