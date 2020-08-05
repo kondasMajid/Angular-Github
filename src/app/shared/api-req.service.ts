@@ -13,6 +13,7 @@ export class ApiReqService {
   private ApiURL = environment.ApiUrl;
   userPath = 'users/'
   repos = '/repos';
+  apiFollowers= 'https://api.github.com/users/kondasMajid/following'
   username; //passing to the user input in the home component
 
   constructor(private http: HttpClient) { }
@@ -29,6 +30,10 @@ export class ApiReqService {
        this.userPath+data +'/repos')
     // return repos;
   }  
+
+  // getFollowers(){
+  //   return this.http.get<any[]>(this.apiFollowers)
+  // }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

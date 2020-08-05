@@ -15,15 +15,17 @@ export class HomeComponent implements OnInit {
      input: FormControl;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
-      console.log(this.getUser())
+      // console.log(this.getUser())
       
     }
     @Input() user: string;
     inputs; 
     Data: any;
+    Following;
 
-
-    ngOnInit() {}
+    ngOnInit() {
+      // this.geFollowers()
+    }
 
     
     // making http request for the  data 
@@ -36,10 +38,18 @@ export class HomeComponent implements OnInit {
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)
-              console.log('show', this.Data)
+              // console.log('user', this.Data)
             }, 
             err => console.log(err),
             () => console.log())
           });
     }
-}   
+
+    // geFollowers(){
+    //   this.apiService.getFollowers().subscribe(res =>{
+    //     console.log('folowers', res)
+    //     this.Following =res;
+    //   })
+
+    //   }
+}

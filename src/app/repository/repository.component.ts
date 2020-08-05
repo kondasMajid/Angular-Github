@@ -8,23 +8,26 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit, OnChanges {
-  
+
+  repoLength;
   [x: string]: any;
-   repos : any[];
+  repos: any[];
   stack;
   @Input() keywords: string;
-  constructor(private APiService: ApiReqService) {}
+  constructor(private APiService: ApiReqService) { }
 
- 
-  ngOnInit() {  }
+
+  ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.keywords.currentValue);
-   this.APiService.getRepos(changes.keywords.currentValue).subscribe(res => {
-     console.log(res)
-    this.repos = res;
-   })
-  
+    this.APiService.getRepos(changes.keywords.currentValue).subscribe(res => {
+      console.log('repos', res)
+      this.repos = res;
+      this.repoLength = res.length;
+      console.log('repos', this.repoLength)
+    })
+
   }
 
 }
