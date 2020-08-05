@@ -152,11 +152,33 @@
             </div>
             <div class="card gedf-card">
                 <div class="card-body">
-                    <!-- <h5 class="card-title">{{fl.login}}</h5> -->
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Following</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="container">
+                            <div class="row" *ngFor="let FL of Following">
+                                <!-- <h3>Following</h3> -->
+                                <div class="col-md-3">
+                                    <img class="rounded-circle" width="45" src="{{ FL.avatar_url }}" alt=" Avatar">
+                                    <!-- <img src="https://picsum.photos/50/50" alt=""> -->
+                                </div>
+                                <div class="col-md-9">
+                                    <h6 class="text-muted mt-2">@{{FL.login}}</h6>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <!-- <div class="mr-2">
+
+                        </div> -->
+                        <!-- <div class="ml-2">
+                            <div class="h5 ml-2">@LeeCross</div>
+                            <div class="h7 text-muted">Miracles Lee Cross</div>
+                        </div> -->
+                    </div>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">{{FL.login}}</h6> -->
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="#" class="card-link">Another link</a> -->
                 </div>
             </div>
         </div>

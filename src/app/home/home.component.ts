@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
     Following;
 
     ngOnInit() {
-      // this.geFollowers()
+      this.geFollowers(this.inputs)
+      this.getUser()
     }
 
     
@@ -38,18 +39,26 @@ export class HomeComponent implements OnInit {
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)
-              // console.log('user', this.Data)
+              console.log('user', this.Data)
             }, 
             err => console.log(err),
             () => console.log())
-          });
+          }); 
     }
 
-    // geFollowers(){
-    //   this.apiService.getFollowers().subscribe(res =>{
-    //     console.log('folowers', res)
-    //     this.Following =res;
-    //   })
+    geFollowers(inputs){
+      // this.apiService.getFollowers(this.inputs).subscribe(res =>{
+      //   console.log('folowers', res)
+      //   this.Following =res;
+      // })
 
-    //   }
+      this.apiService.getFollowers(this.inputs
+        
+        ).subscribe(res =>{
+        console.log('folowers', res)
+        this.Following =res;
+      })
+
+
+      }
 }
