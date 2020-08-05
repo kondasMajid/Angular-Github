@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
               this.user = this.apiService.username;
               this.Data = data;
               this.Data = Array.of(this.Data)
-              // console.log('show', this.Data)
+              console.log('show', this.Data)
             }, 
             err => console.log(err),
             () => console.log())
