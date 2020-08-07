@@ -39,9 +39,9 @@ export class ApiReqService {
     // this.getFollowers(data);
   }  
 
- getFollowers(data : string){
+ getFollowers(ff:string){
   var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.get<any[]>(this.BASE_URL+this.userRoute+data+'/followers',{ headers: reqHeader })
+    return this.http.get<any[]>(this.BASE_URL+this.userRoute+ff,{ headers: reqHeader })
  }
 
   private handleError(error: HttpErrorResponse) {
