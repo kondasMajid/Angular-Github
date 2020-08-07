@@ -39,7 +39,11 @@ export class ApiReqService {
     // this.getFollowers(data);
   }  
 
- 
+ getFollowers(data : string){
+  var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get<any[]>(this.BASE_URL+this.userRoute+data+'/followers',{ headers: reqHeader })
+ }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);

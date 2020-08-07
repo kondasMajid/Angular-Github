@@ -12,7 +12,10 @@ export class GitHubHttpInterceptor implements HttpInterceptor{
             params: new HttpParams().append('made', 'Git Home').append('author', '@codejack :)'),
             headers: req.headers.set(
                   'Authorization', environment.token ,
+                //   'Content-Type': 'application/json',
+    // 'Accept': 'application/json',
                 )
+                
         })
 
         return next.handle(newRequest).pipe(tap(succ => console.log('successfull resp http'),

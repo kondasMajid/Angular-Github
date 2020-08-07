@@ -3,6 +3,7 @@ import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RepositoryComponent } from '../repository/repository.component';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
     inputs; 
     Data: any;
     Following;
-
+     headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
     ngOnInit() {
       
       this.getUser()
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit {
     //   let ss = this.apiService.getHoverCard().subscribe(data => console.log('Hover card', data));
     //   console.log('Hover carddd', ss)
     // }
-    
+    DT;
     // making http request for the  data 
     getUser(){
         this.input.valueChanges.pipe(debounceTime(500),
@@ -45,15 +46,18 @@ export class HomeComponent implements OnInit {
               this.Data = data;
               this.Data = Array.of(this.Data)
               console.log('user', this.Data)
-              this.geFollowers()
+              this.geFollowers(this.DT)
             }, 
             err => console.log(err),
             () => console.log())
           }); 
          
     }
-     geFollowers(){
-      
+     geFollowers(DT){
+     
+        this.apiService.getFollowers(DT).subscribe(dat =>{
+          console.log('followers', dat)
+        })
       }
 
   }

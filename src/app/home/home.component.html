@@ -142,11 +142,11 @@
         </div>
         <div class="col-md-3">
             <div class="card gedf-card">
-                <div class="card-body">
-                    <!-- *ngFor="let data of Data" -->
+                <div class="card-body" *ngFor="let data of Data">
+                    <!-- -->
                     <!-- <h5 class="card-title">Card title</h5> -->
-                    <!-- <h6 class="card-subtitle mb-2 text-muted">public repos <strong>{{data.public_repos}}</strong></h6> -->
-                    <!-- <p class="card-text"> Public gist <strong>{{data.public_gists}}</strong></p> -->
+                    <h6 class="card-subtitle mb-2 text-muted">public repos <strong>{{data.public_repos}}</strong></h6>
+                    <p class="card-text"> Public gist <strong>{{data.public_gists}}</strong></p>
                     <!-- <a href="#" class="card-link">Card link</a> -->
                     <!-- <a href="#" class="card-link">Another link</a> -->
                 </div>
