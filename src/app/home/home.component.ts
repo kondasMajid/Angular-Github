@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit, ElementRef, QueryList, ViewChildren, SimpleChanges } from '@angular/core';
 import { ApiReqService } from '../shared/api-req.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
     Following;
 
     ngOnInit() {
-      this.geFollowers(this.inputs)
+      
       this.getUser()
-      // this.getHover()
+      // this.geFollowers()
     }
     
     // getHover(){
@@ -41,35 +41,19 @@ export class HomeComponent implements OnInit {
          .subscribe((keywords: string) => {
             this.apiService.getUsers(keywords)
             .subscribe(data=>{
-              this.user = this.apiService.username;
+              this.user = this.apiService.usernamez;
               this.Data = data;
               this.Data = Array.of(this.Data)
               console.log('user', this.Data)
+              this.geFollowers()
             }, 
             err => console.log(err),
             () => console.log())
           }); 
+         
     }
- 
-
-
-    // work on the followers  next time you
-
-
-
-    geFollowers(inputs){
-      // this.apiService.getFollowers(this.inputs).subscribe(res =>{
-      //   console.log('folowers', res)
-      //   this.Following =res;
-      // })
-
-      this.apiService.getFollowers(this.inputs
-        
-        ).subscribe(res =>{
-        console.log('folowers', res)
-        this.Following =res;
-      })
-
-
+     geFollowers(){
+      
       }
-}
+
+  }

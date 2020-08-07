@@ -10,43 +10,36 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiReqService {
-  private ApiURL = environment.ApiUrl;
+  private BASE_URL = environment.BASE_URL;
   userRoute = 'users/'
   repos = '/repos';
-  apiFollowers= 'following'
-  username; //passing to the user input in the home component
-
+  apiFollowers= '/following'
+  usernamez:any; //passing to the user input in the home component
   constructor(private http: HttpClient) { }
 
+  
   //return users
   getUsers(username: string) {
     let result = this.http.get<User>
-    (this.ApiURL + this.userRoute + username)
+    (this.BASE_URL + this.userRoute + username)
+    this.usernamez = result;
+    this.usernamez.login;
+    console.log('Username',username)
     return result;
+    
   }
 
+  GerRep = this.getRepos;
+    
   getRepos(data : string): Observable<any> {
-    return this.http.get<any[]>(this.ApiURL+
+    return this.http.get<any[]>(this.BASE_URL+
        this.userRoute+data +'/repos')
+      //  console.log('ssssss', this.username)
     // return repos;
+    // this.getFollowers(data);
   }  
 
-  getFollowers(dat): Observable<any>{
-  let ins = this.http.get<any[]>(this.ApiURL+this.userRoute+dat+'/followers')
-    // https://api.github.com/users/kondasMajid/followers
-    return ins;
-  }
-  getFollows(dad): Observable<any>{
-    let ins = this.http.get<any[]>(this.ApiURL+this.userRoute+dad+'/following')
-      return ins;
-    }
-
-  // getHoverCard(){
-  //   let hovercard = this.http.get<User>
-  //   (this.ApiURL + this.userRoute + this.username+'/hovercard')
-  //   return hovercard;
-    
-  // }
+ 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
