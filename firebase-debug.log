@@ -1,0 +1,72 @@
+[debug] [2020-08-05T19:35:13.141Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T19:35:13.149Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codejack\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-08-05T19:35:13.150Z] CLI Version:   8.0.2
+[debug] [2020-08-05T19:35:13.150Z] Platform:      win32
+[debug] [2020-08-05T19:35:13.151Z] Node Version:  v12.14.1
+[debug] [2020-08-05T19:35:13.225Z] Time:          Wed Aug 05 2020 21:35:13 GMT+0200 (Central European Summer Time)
+[debug] [2020-08-05T19:35:13.226Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T19:35:13.226Z] 
+[debug] [2020-08-05T19:35:13.325Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-05T19:35:13.328Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Project X\ship\2020\gitHub
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using angular-git-e0784.
+[debug] [2020-08-05T19:35:19.285Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-08-05T19:35:19.285Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-08-05T19:35:21.217Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 Aug 2020 19:36:43 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-05T19:35:21.257Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/angular-git-e0784  
+ 
+[debug] [2020-08-05T19:35:23.342Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 Aug 2020 19:36:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2020-08-05T20:06:10.280Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T20:06:10.285Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\codejack\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-08-05T20:06:10.286Z] CLI Version:   8.0.2
+[debug] [2020-08-05T20:06:10.286Z] Platform:      win32
+[debug] [2020-08-05T20:06:10.286Z] Node Version:  v12.14.1
+[debug] [2020-08-05T20:06:10.288Z] Time:          Wed Aug 05 2020 22:06:10 GMT+0200 (Central European Summer Time)
+[debug] [2020-08-05T20:06:10.288Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T20:06:10.288Z] 
+[debug] [2020-08-05T20:06:10.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-05T20:06:10.305Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Project X\ship\2020\gitHub
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+

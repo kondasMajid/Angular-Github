@@ -26,8 +26,13 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
       this.geFollowers(this.inputs)
       this.getUser()
+      // this.getHover()
     }
-
+    
+    // getHover(){
+    //   let ss = this.apiService.getHoverCard().subscribe(data => console.log('Hover card', data));
+    //   console.log('Hover carddd', ss)
+    // }
     
     // making http request for the  data 
     getUser(){
@@ -45,6 +50,12 @@ export class HomeComponent implements OnInit {
             () => console.log())
           }); 
     }
+ 
+
+
+    // work on the followers  next time you
+
+
 
     geFollowers(inputs){
       // this.apiService.getFollowers(this.inputs).subscribe(res =>{
