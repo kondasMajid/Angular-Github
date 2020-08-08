@@ -5,9 +5,9 @@
 https://angular-git-e0784.firebaseapp.com/
 
 
-## Development 
-Angular version 8.3.22 
-## 
+##Search pages
+![Image of searched country](https://github.com/kondasMajid/Covid19-Live-Update/blob/master/src/assets/img2.PNG)
+
 Github API
 ## 
 Angular Interceptors configured for the headers

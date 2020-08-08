@@ -60,19 +60,31 @@ export class HomeComponent implements OnInit {
         this.apiService.getFollowers(key)
             .subscribe(data=>{
               this.Followers = data;
-              this.Followers = Array.of(this.Followers)
-              console.log('Followers', this.Followers)
+
+              this.FollowersX = this.Followers;
+
+              this.FollowersX.forEach(function(data){
+                console.log(data[0], data[1].length);
+              });
+
+              this.Followers = Array.of(this.FollowersX)
+              console.log('Followers', this.FollowersX)
             }, 
             err => console.log(err),
             () => console.log())
     }
- 
+ XX;
+ FollowersX:any;
     geFollowing(key:any){
       this.apiService.getFollowing(key)
           .subscribe(data=>{
             this.Following = data;
+
+            this.XX = this.Following;
             this.Following = Array.of(this.Following)
+
             console.log('Fellowing', this.Following)
+            console.log('xxx', this.XX)
           }, 
           err => console.log(err),
           () => console.log())
