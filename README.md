@@ -6,7 +6,7 @@ https://angular-git-e0784.firebaseapp.com/
 
 
 ##Search pages
-![Image of searched country](https://github.com/kondasMajid/Covid19-Live-Update/blob/master/src/assets/img2.PNG)
+![Image of searched country](https://github.com/kondasMajid/Angular-Github/blob/master/src/assets/preview.png)
 
 Github API
 ## 
