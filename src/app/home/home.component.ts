@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
               console.log('DATA ')
               // this.geFollowers(this.user)
               console.log('Fellowers Details',this.geFollowers(this.Followers))
-              console.log('Following',this.geFollowing(this.D))
+              console.log('Following',this.geFollowing(this.Following))
             }, 
             err => console.log(err),
             () => console.log())
@@ -59,22 +59,20 @@ export class HomeComponent implements OnInit {
      geFollowers(key:any){
         this.apiService.getFollowers(key)
             .subscribe(data=>{
-              console.log('mmy Fellowers', data)
-              this.DT = data;
-              this.DT = Array.of(this.DT)
-              console.log('ff', this.DT)
+              this.Followers = data;
+              this.Followers = Array.of(this.Followers)
+              console.log('Followers', this.Followers)
             }, 
             err => console.log(err),
             () => console.log())
     }
-
+ 
     geFollowing(key:any){
-      this.apiService.getFollowers(key)
+      this.apiService.getFollowing(key)
           .subscribe(data=>{
-            console.log('mmy Fellowings', data)
-            this.DT = data;
-            this.DT = Array.of(this.DT)
-            console.log('ff', this.DT)
+            this.Following = data;
+            this.Following = Array.of(this.Following)
+            console.log('Fellowing', this.Following)
           }, 
           err => console.log(err),
           () => console.log())
