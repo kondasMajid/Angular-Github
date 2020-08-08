@@ -1,11 +1,11 @@
 # Angular GitHub
 
 
-## Demo 
+## Live Demo Link
 https://angular-git-e0784.firebaseapp.com/
 
 
-##Search pages
+##Preview
 ![Image of searched country](https://github.com/kondasMajid/Angular-Github/blob/master/src/assets/preview.png)
 
 Github API
