@@ -19,61 +19,65 @@ export class HomeComponent implements OnInit {
       // console.log(this.getUser())
       
     }
-    @Input() user: string;
+    @Input() User: string; //interface to  user input
+    @Input() User1: string;
     inputs; 
-    Data: any;
+    Data: any; // will be user keep User Details
     Following;
+    DT;
+    Followers;
      headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
     ngOnInit() {
-      
-      this.getUser()
-      this.geFollowers()
+            this.getUser()      
     }
     
-    // getHover(){
-    //   let ss = this.apiService.getHoverCard().subscribe(data => console.log('Hover card', data));
-    //   console.log('Hover carddd', ss)
-    // }
-    DT;
-    // making http request for the  data 
     getUser(){
         this.input.valueChanges.pipe(debounceTime(500),
          distinctUntilChanged())
          .subscribe((keywords: string) => {
             this.apiService.getUsers(keywords)
             .subscribe(data=>{
-              this.user = this.apiService.usernamez;
+              this.User = this.apiService.usernamez;
+              this.User1 = data.login;
+              this.Followers = Array.of(this.User1)
+              this.Following = Array.of(this.User1)
+              this.DT = data.login
               this.Data = data;
-              this.Data = Array.of(this.Data.login)
+              this.Data = Array.of(this.Data)
               console.log('user', this.Data)
-              // this.geFollowers()
+              console.log('DATA User', this.Data)
+              console.log('DATA ')
+              // this.geFollowers(this.user)
+              console.log('Fellowers Details',this.geFollowers(this.Followers))
+              console.log('Following',this.geFollowing(this.D))
             }, 
             err => console.log(err),
             () => console.log())
           }); 
          
     }
-     geFollowers(){
-      this.input.valueChanges.pipe(debounceTime(500),
-         distinctUntilChanged())
-         .subscribe((keywords: string) => {
-            this.apiService.getFollowers(keywords)
+     geFollowers(key:any){
+        this.apiService.getFollowers(key)
             .subscribe(data=>{
-              this.DT = this.apiService;
-              // this.Data = data;
-              this.DT = Array.of(this.Data.login)
-              console.log('ff', this.Data)
-              // this.geFollowers()
+              console.log('mmy Fellowers', data)
+              this.DT = data;
+              this.DT = Array.of(this.DT)
+              console.log('ff', this.DT)
             }, 
             err => console.log(err),
             () => console.log())
-          }); 
+    }
 
-
-
-        // this.apiService.getFollowers(n).subscribe(dat =>{
-        //   console.log('followers', dat)
-        // })
-      }
-
+    geFollowing(key:any){
+      this.apiService.getFollowers(key)
+          .subscribe(data=>{
+            console.log('mmy Fellowings', data)
+            this.DT = data;
+            this.DT = Array.of(this.DT)
+            console.log('ff', this.DT)
+          }, 
+          err => console.log(err),
+          () => console.log())
+  }
+      
   }

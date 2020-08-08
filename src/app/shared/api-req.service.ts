@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment'
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { User } from './user.model';
 import { catchError } from 'rxjs/operators';
@@ -15,8 +15,15 @@ export class ApiReqService {
   repos = '/repos';
   apiFollowers= '/following'
   usernamez:any; //passing to the user input in the home component
+
+  perPage='?per_page=100';
   constructor(private http: HttpClient) { }
 
+   headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/vnd.github.v3.raw',
+    'Authorization': 'token INSERTACCESSTOKENHERE'
+  }
   
   //return users
   getUsers(username: string) {
@@ -28,10 +35,8 @@ export class ApiReqService {
     return result;
     
   }
-
   GerRep = this.getRepos;
-    
-  getRepos(data : string): Observable<any> {
+ getRepos(data : string): Observable<any> {
     return this.http.get<any[]>(this.BASE_URL+
        this.userRoute+data +'/repos')
       //  console.log('ssssss', this.username)
@@ -39,9 +44,17 @@ export class ApiReqService {
     // this.getFollowers(data);
   }  
 
- getFollowers(ff:string){
-  var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.get<any[]>(this.BASE_URL+this.userRoute+ff,{ headers: reqHeader })
+  
+ getFollowers(data:any): Observable<any>{
+  let params = new HttpParams().append('param', 'value');
+      return this.http.get<any[]>(this.BASE_URL+
+      this.userRoute+data +'/followers?page=1&per_page=100');
+ }
+
+ getFollowing(data:any): Observable<any>{
+  let params = new HttpParams().append('param', 'value');
+      return this.http.get<any[]>(this.BASE_URL+
+      this.userRoute+data +'/following?page=1&per_page=100');
  }
 
   private handleError(error: HttpErrorResponse) {
