@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GitHubHttpInterceptor } from './shared/github.interceptor';
 import { RepositoryComponent } from './repository/repository.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

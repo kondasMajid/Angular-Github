@@ -20,14 +20,13 @@ export class RepositoryComponent implements OnInit, OnChanges {
   ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.keywords.currentValue);
+    // console.log(changes.keywords.currentValue);
     this.APiService.getRepos(changes.keywords.currentValue).subscribe(res => {
-      console.log('repos', res)
+      // console.log('repos', res)
       this.repos = res;
       this.repoLength = res.length;
-      console.log('repos', this.repoLength)
+      // console.log('repos', this.repoLength)
     })
-
   }
 
 }
