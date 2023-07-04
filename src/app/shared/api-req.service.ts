@@ -79,4 +79,15 @@ export class ApiReqService {
     }
     return throwError("Something bad happened; please try again later.");
   }
+
+  getTrendingRepositories(): Observable<any> {
+    const url = `${this.BASE_URL}/search/repositories?q=created:%3E${this.getLastWeekDate()}&sort=stars&order=desc`;
+    return this.http.get<any>(url);
+  }
+
+  private getLastWeekDate(): string {
+    const today = new Date();
+    const lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+    return lastWeek.toISOString().split('T')[0];
+  }
 }

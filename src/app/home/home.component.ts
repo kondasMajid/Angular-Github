@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
      input: FormControl;
   errorReturn: any;
   users: any;
+  repositories: any;
     constructor(private apiService: ApiReqService, ) {
       this.input = new FormControl();
       // console.log(this.getUser())
@@ -96,6 +97,31 @@ export class HomeComponent implements OnInit {
           () => console.log())
   }
 
+
+
+ getTrendingRepositories(){
+
+  // this.apiService.getTrendingRepositories().subscribe(
+  //   response => {
+  //     this.repositories = response.items;
+  //     console.log('trending', this.repositories);
+  //   },
+  //   error => {
+  //     console.log('An error occurred for:', error);
+  //   }
+  // );
+
+  this.apiService.getTrendingRepositories().subscribe(
+    response => {
+      this.repositories = response.items;
+      console.log('ooooooo', this.repositories)
+    },
+    error => {
+      console.log('An error occurred:', error);
+    }
+  );
+ }
+
   // GetUsersWithSimilarName(){
   //   this.apiService.getUsersWithSimilarName(this.input.value)
   //   .subscribe(data=>{
@@ -130,6 +156,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getUser();
     // this.GetUsersWithSimilarName();
+    this.getTrendingRepositories();
+    
   }
 
 

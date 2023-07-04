@@ -1,12 +1,18 @@
+<p class="pt-2">Search results.... </p>
 <div class="container mt-5" >
     <div class="row" >
+      
         <div class="col-md-6 p-2" *ngFor="let user of Users">
+           
             <div class="card p-3">
-                <div class="d-flex flex-row mb-3"><img src="{{ user.avatar_url }}" width="70">
-                    <div class="d-flex flex-column ml-2"><span>Stripe</span><span class="text-black-50">{{user.login}}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                <div class="d-flex flex-row mb-3"><img src="{{ user.avatar_url }}" width="70" class="img">
+                    <div class="d-flex flex-column ml-2">
+                        <span> </span>
+                        <span class="text-black-50 p-2">{{user.login}}</span>
+                        <span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
                 </div>
-                <h6>Get more context on your users with stripe data inside our platform.</h6>
-                <div class="d-flex justify-content-between install mt-3"><span>Installed 172 times</span><span class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                <!-- <h6>Get more context on your users with stripe data inside our platform.</h6> -->
+                <div class="d-flex justify-content-between install mt-3"><span><a href="{{ user.followers_url }}" target="_blank">→Followers</a></span> <span><a href="{{user.following_url}}" target="_parent"> Following←</a></span><span class="text-primary"><a href="{{ user.html_url }}" target="_blank"> View &nbsp; </a><i class="fa fa-angle-right"></i></span></div>
             </div>
         </div>
      

@@ -30,24 +30,24 @@ export class UsersComponent implements OnInit {
 
   }
   
-  GetUsersWithSimilarName(): void {
-    // Debounce user input with 300ms delay
-    this.input.valueChanges
-      .pipe(
-        debounceTime(300),
-        distinctUntilChanged(),
-        switchMap(query => this.apiService.getUsersWithSimilarName(this.input.value))
-      )
-      .subscribe(
-        response => {
-          this.users = response.items;
-          console.log('users list ', this.users)
-        },
-        error => {
-          console.log('An error occurred:', error);
-        }
-      );
-  }
+  // GetUsersWithSimilarName(): void {
+  //   // Debounce user input with 300ms delay
+  //   this.input.valueChanges
+  //     .pipe(
+  //       debounceTime(300),
+  //       distinctUntilChanged(),
+  //       switchMap(query => this.apiService.getUsersWithSimilarName(this.input.value))
+  //     )
+  //     .subscribe(
+  //       response => {
+  //         this.users = response.items;
+  //         console.log('users list ', this.users)
+  //       },
+  //       error => {
+  //         console.log('An error occurred:', error);
+  //       }
+  //     );
+  // }
 
 
 }
